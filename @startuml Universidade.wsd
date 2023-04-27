@@ -1,0 +1,61 @@
+@startuml Universidade
+left to right direction
+
+actor Reitor as r
+actor Coordenador as co
+actor Professor as p
+actor Aluno as a
+actor Financeiro as f
+actor Funcionário as fun
+actor Faxineirio as fx
+actor Vigilante as v
+
+usecase "Administrar Universidade" as uc1
+usecase "Representar Universidade" as uc2
+usecase "Orientar Matrícula" as uc3
+usecase "Administrar Curso" as uc4
+usecase "Ministrar Aula" as uc5
+usecase "Assistir Aula" as uc6
+usecase "Gerenciar Receita e Despesas" as uc7
+usecase "Pagar Salário" as uc8
+usecase "Cuidar do Patrimônio" as uc9
+usecase "Limpeza" as uc10
+usecase "Receber salário" as uc11
+r --|> co
+co --|> p
+f --|> co
+f --|> p
+f --> uc7
+f --> uc8
+r --> uc1
+r --> uc2
+co --> uc3
+co --> uc4
+p --> uc5
+a --> uc6
+r --|> p
+r --|> f
+fun --|> fx
+fun --|> v
+fun --|> p
+fun --|> co
+r --|> fun
+fun --|> f
+uc8 --> fx
+uc8 --> p
+uc8 --> co
+uc8 --> v
+p --|> a
+uc5 --> a
+uc6 --> p
+v --> uc9
+fx --> uc10
+fx--> uc11
+p--> uc11
+co --> uc11
+v --> uc11
+fun --> uc11
+r --|> fx
+r --|> v
+r --|> co
+@enduml 
