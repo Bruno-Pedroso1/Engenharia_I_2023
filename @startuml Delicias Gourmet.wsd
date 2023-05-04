@@ -1,0 +1,25 @@
+@startuml Delicias Gourmet
+actor "Gerente de Compras" as gc
+actor "Supervisor de Estoque" as se
+actor "Coordenador de Produção" as cp
+actor "Analista de Qualidade" as aq
+actor "Gerente de Vendas" as gv
+
+usecase "Comprar Material" as uc1
+usecase "Gerenciar materiais" as uc2
+usecase "Coordenar utilização dos materiais" as uc4
+usecase "Monitorar produção" as uc5
+usecase "Coordenar vendas" as uc6
+usecase "Vender produtos" as uc7
+usecase "Registrar vendas" as uc11
+
+gc --|> se
+gc --> uc1
+se --> uc2
+cp --> uc4
+aq --> uc5
+aq --|> cp
+gv --> uc6
+gv --> uc11
+gv --> uc7
+@enduml
